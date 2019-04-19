@@ -1,7 +1,5 @@
 package com.sunny.webcollection.config.springmvc;
 
-import com.alibaba.fastjson.JSON;
-import com.sun.net.httpserver.Headers;
 import org.apache.logging.log4j.util.Strings;
 import org.springframework.http.HttpStatus;
 import org.springframework.util.StringUtils;
@@ -9,7 +7,6 @@ import org.springframework.web.servlet.handler.HandlerInterceptorAdapter;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import java.util.Enumeration;
 
 public class MvcAdapter extends HandlerInterceptorAdapter {
 
