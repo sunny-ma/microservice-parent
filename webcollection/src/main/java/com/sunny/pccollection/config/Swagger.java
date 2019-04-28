@@ -1,4 +1,4 @@
-package com.sunny.webcollection.config;
+package com.sunny.pccollection.config;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -19,7 +19,7 @@ public class Swagger {
         return new Docket(DocumentationType.SWAGGER_2)
                 .apiInfo(apiInfo())
                 .select()
-                .apis(RequestHandlerSelectors.basePackage("com.sunny.webcollection.module"))
+                .apis(RequestHandlerSelectors.basePackage("com.sunny.pccollection.module"))
                 .paths(PathSelectors.any())
                 .build();
     }

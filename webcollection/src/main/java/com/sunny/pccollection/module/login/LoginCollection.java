@@ -1,5 +1,6 @@
-package com.sunny.webcollection.module.login;
+package com.sunny.pccollection.module.login;
 
+import com.sunny.pccollection.common.param.LoginUser;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -14,14 +15,14 @@ public class LoginCollection {
 
     @ApiOperation(value = "获取Token")
     @GetMapping("getToken")
-    public String getToken(String username, String password){
+    public String getToken(LoginUser loginUser){
 
-        return null;
+        return "getToken";
     }
 
     @ApiOperation(value = "设置token")
     @PostMapping
-    public String postToken(String username, String password){
+    public String postToken(LoginUser loginUser){
         return null;
     }
 }
