@@ -9,6 +9,7 @@ public enum ResponseCode{
     SUCCESS("0000", "成功"),
     ERROR("9999","异常"),
     TOKEN_IS_NULL("4001", "TOKEN 为空"),
+    NO_LOGIN("4002", "您还没有登录"),
     ;
 
     ResponseCode(String code, String message){

@@ -45,7 +45,12 @@ public abstract class TokenService {
             response401(response, new Response(ResponseCode.TOKEN_IS_NULL));
             return null;
         }
+        String commonToken = this.getCommonToken(String.valueOf(token));
+        if (StringUtils.isEmpty(commonToken)) {
+            response401(response, new Response(ResponseCode.NO_LOGIN));
+        }
         Response<UserInfoDto> responseUserInfo = this.getUserInfoDto(String.valueOf(token));
+
         System.out.println(JSONObject.toJSONString(responseUserInfo));
         if (!responseUserInfo.success()) {
             response401(response, responseUserInfo);

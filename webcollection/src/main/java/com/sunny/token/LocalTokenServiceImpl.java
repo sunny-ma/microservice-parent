@@ -15,21 +15,20 @@ import java.util.concurrent.ConcurrentHashMap;
 @Component("localTokenService")
 public class LocalTokenServiceImpl extends TokenService {
 
-    private static Map commonTokens = new ConcurrentHashMap();
-    private static Map clientTokens = new ConcurrentHashMap();
+    private static Map<String, UserInfoDto> commonTokens = new ConcurrentHashMap();
+    private static Map<String, String> clientTokens = new ConcurrentHashMap();
 
     @Override
     public Response<UserInfoDto> getUserInfoDto(String token) {
         if (StringUtils.isEmpty(token)) {
             new Response(ResponseCode.TOKEN_IS_NULL);
         }
-        UserInfoDto userInfoDto = new UserInfoDto();
-        userInfoDto.setUsername(token);
+        UserInfoDto userInfoDto = commonTokens.get(token);
         return new Response(userInfoDto);
     }
 
     @Override
     public String getCommonToken(String clientToken) {
-        return clientToken;
+        return clientTokens.get(clientToken);
     }
 }
